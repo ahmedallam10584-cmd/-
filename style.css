@@ -1,0 +1,51 @@
+/* خلفية متحركة */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+  font-family: Arial, sans-serif;
+}
+
+/* الكارت */
+.card {
+  padding: 40px 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* النص */
+h1 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  animation: glow 2s infinite alternate;
+}
+
+/* حركة الخلفية */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* حركة الكارت */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* لمعة النص */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #fff; }
+  100% { text-shadow: 0 0 20px #00e6e6, 0 0 30px #00e6e6; }
+}
